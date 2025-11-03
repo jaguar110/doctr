@@ -81,3 +81,23 @@ python funsd_infer.py
 🧾 Output Files
 detection_output.json
 detection_visualization.png
+
+
+
+
+## For Uploading large data to Git
+
+# Increase HTTP buffer to 1GB (default is only 1MB)
+git config --global http.postBuffer 1048576000
+
+# Increase timeout to 10 minutes
+git config --global http.lowSpeedLimit 0
+git config --global http.lowSpeedTime 999999
+
+# Use HTTP 1.1 instead of 2 (avoids some proxy timeouts)
+git config --global http.version HTTP/1.1
+
+# Enable compression to speed up transfer
+git config --global core.compression 9
+
+git push origin main --no-verify
